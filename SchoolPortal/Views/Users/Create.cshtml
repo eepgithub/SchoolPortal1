@@ -1,0 +1,27 @@
+﻿@model UserViewModel
+
+<h4>New User</h4>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Role" class="control-label"></label>
+        @Html.DropDownListFor(m => m.Role, new SelectList(ViewBag.Roles, "Name", "Name"), "Select a Role")
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create User" class="btn btn-primary" />
+    </div>
+</form>

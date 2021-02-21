@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ApplicationUser>
+
+<a asp-action="Create">Add New User</a>
+
+@foreach(var user in Model)
+{
+    <div>@user.DisplayName</div>
+}
+
